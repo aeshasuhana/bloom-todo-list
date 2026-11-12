@@ -1,0 +1,134 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bloom — My Little To-Do Space</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <div class="app">
+
+    <aside class="sidebar">
+      <a href="#" class="logo">✿ bloom<span>.</span></a>
+      <p class="side-label">YOUR SPACE</p>
+
+      <nav>
+        <a href="#" class="nav-link active" data-filter="all">♡ All Tasks</a>
+        <a href="#" class="nav-link" data-filter="today">☀ Today</a>
+        <a href="#" class="nav-link" data-filter="completed">✓ Completed</a>
+      </nav>
+
+      <p class="side-label">CATEGORIES</p>
+      <nav>
+        <a href="#" class="nav-link" data-filter="Personal">🌷 Personal</a>
+        <a href="#" class="nav-link" data-filter="Study">📚 Study</a>
+        <a href="#" class="nav-link" data-filter="Work">💻 Work</a>
+        <a href="#" class="nav-link" data-filter="Wishlist">🎀 Wishlist</a>
+      </nav>
+
+      <div class="sidebar-note">
+        <span>🌼</span>
+        <h3>Little steps every day!</h3>
+        <p>You are doing better than you think.</p>
+      </div>
+    </aside>
+
+    <main class="main">
+
+      <header class="topbar">
+        <div>
+          <p class="date" id="date"></p>
+          <h1>Hello, sunshine! <span>☀️</span></h1>
+          <p class="subtitle">Let's make today a lovely one.</p>
+        </div>
+        <div class="avatar">🌸</div>
+      </header>
+
+      <section class="hero">
+        <div>
+          <span class="eyebrow">YOUR LITTLE CORNER OF PRODUCTIVITY</span>
+          <h2>Dream it.<br>Plan it. <i>Do it.</i></h2>
+          <p>Small progress is still progress. Keep blooming!</p>
+          <button class="add-btn" id="heroAdd">+ Add a task</button>
+        </div>
+        <div class="hero-art">🌷</div>
+      </section>
+
+      <section class="progress-section">
+        <div class="progress-info">
+          <div>
+            <span class="eyebrow">DAILY PROGRESS</span>
+            <h3>You're blooming beautifully!</h3>
+          </div>
+          <strong id="progressText">0%</strong>
+        </div>
+        <div class="progress-track">
+          <div class="progress-fill" id="progressFill"></div>
+        </div>
+        <p id="progressMessage">Every little task counts 🌱</p>
+      </section>
+
+      <section class="tasks-section">
+        <div class="section-heading">
+          <div>
+            <span class="eyebrow">YOUR PERSONAL PLANNER</span>
+            <h2 id="taskHeading">Your tasks <span>♡</span></h2>
+          </div>
+          <div class="search-wrap">
+            <span>⌕</span>
+            <input type="search" id="search" placeholder="Find something...">
+          </div>
+        </div>
+
+        <div class="filter-row">
+          <button class="filter-btn selected" data-filter="all">All</button>
+          <button class="filter-btn" data-filter="today">Today</button>
+          <button class="filter-btn" data-filter="Personal">Personal</button>
+          <button class="filter-btn" data-filter="Study">Study</button>
+          <button class="filter-btn" data-filter="Work">Work</button>
+          <button class="filter-btn" data-filter="Wishlist">Wishlist</button>
+        </div>
+
+        <div class="task-grid" id="taskGrid"></div>
+      </section>
+
+      <footer>Made with ♡ and a little bit of magic.</footer>
+    </main>
+  </div>
+
+  <!-- Add task modal -->
+  <div class="modal-overlay" id="modal">
+    <div class="modal">
+      <button class="close-btn" id="closeModal">×</button>
+      <span class="eyebrow">A NEW LITTLE GOAL</span>
+      <h2>Add a task 🌷</h2>
+
+      <form id="taskForm">
+        <label for="taskTitle">What needs to be done?</label>
+        <input id="taskTitle" type="text" placeholder="e.g. Read 10 pages..." required>
+
+        <label for="taskCategory">Choose a category</label>
+        <select id="taskCategory">
+          <option>Personal</option>
+          <option>Study</option>
+          <option>Work</option>
+          <option>Wishlist</option>
+        </select>
+
+        <label for="taskDate">When?</label>
+        <input id="taskDate" type="date">
+
+        <button type="submit" class="add-btn full-btn">Save my task ♡</button>
+      </form>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
